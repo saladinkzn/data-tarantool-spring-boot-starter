@@ -3,7 +3,7 @@ plugins {
 }
 
 group 'ru.shadam'
-version '0.1.0-SNAPSHOT'
+version '0.1.0'
 
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
@@ -15,7 +15,7 @@ repositories {
 
 dependencies {
   compile 'org.springframework.boot:spring-boot-starter:1.4.3.RELEASE'
-  compile 'ru.shadam:spring-data-tarantool:0.1.0-SNAPSHOT'
+  compile 'ru.shadam:spring-data-tarantool:0.1.0'
 }
 
 dependencies {
