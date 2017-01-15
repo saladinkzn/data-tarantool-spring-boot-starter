@@ -1,0 +1,27 @@
+plugins {
+  id 'java'
+}
+
+group 'ru.shadam'
+version '0.1.0-SNAPSHOT'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+repositories {
+  mavenLocal()
+  jcenter()
+}
+
+dependencies {
+  compile 'org.springframework.boot:spring-boot-starter:1.4.3.RELEASE'
+  compile 'ru.shadam:spring-data-tarantool:0.1.0-SNAPSHOT'
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.3'
+}
