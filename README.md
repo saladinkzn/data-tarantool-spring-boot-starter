@@ -19,12 +19,12 @@ spring-data-tarantool repositories will be configured by default.
 
 ## Available properties:
 
- | property | defaultValue |  description | 
- | --- | --- | --- |   
- | ru.shadam.tarantool.host | localhost | tarantool server host |
- | ru.shadam.tarantool.port | 3301 | tarantool server port |
- | ru.shadam.tarantool.user | guest | tarantool server user |
- | ru.shadam.tarantool.password | `null` | tarantool server password |
+ property | defaultValue |  description 
+ --- | --- | ---    
+ ru.shadam.tarantool.host | localhost | tarantool server host
+ ru.shadam.tarantool.port | 3301 | tarantool server port
+ ru.shadam.tarantool.user | guest | tarantool server user
+ ru.shadam.tarantool.password | `null` | tarantool server password
  
 ## Copyright and License
 
