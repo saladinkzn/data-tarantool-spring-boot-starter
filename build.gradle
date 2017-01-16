@@ -1,9 +1,11 @@
 plugins {
   id 'java'
+  id 'ru.shadam.publish-plugin' version '0.3.0' apply false
+  id "com.jfrog.bintray" version "1.7.3" apply false
 }
 
-group 'ru.shadam'
-version '0.1.0'
+apply plugin: 'ru.shadam.publish-plugin'
+apply plugin: 'com.jfrog.bintray'
 
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
@@ -15,10 +17,32 @@ repositories {
 dependencies {
   compile 'org.springframework.boot:spring-boot-starter:1.4.3.RELEASE'
   compile 'ru.shadam:spring-data-tarantool:0.1.0'
+  testCompile group: 'junit', name: 'junit', version: '4.11'
 }
 
-dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.11'
+publish {
+  description = 'spring-boot-starter for spring-data-tarantool'
+  github project.github_username, project.name
+  developerName = 'Timur Shakurov'
+  license = project.license
+  licenseUrl = "https://raw.githubusercontent.com/${project.github_username}/${project.name}/master/LICENSE"
+}
+
+bintray {
+  user = System.getenv('BINTRAY_USER')
+  key = System.getenv('BINTRAY_KEY')
+  pkg {
+    repo = 'maven'
+    name = project.name
+    licenses = [project.license]
+    vcsUrl = "https://github.com/${project.github_username}/${project.name}.git"
+    publications = ['mavenJava']
+    version {
+      gpg {
+        sign = true
+      }
+    }
+  }
 }
 
 task wrapper(type: Wrapper) {
