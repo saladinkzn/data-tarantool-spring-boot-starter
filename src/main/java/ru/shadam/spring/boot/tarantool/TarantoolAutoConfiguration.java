@@ -26,7 +26,7 @@ public class TarantoolAutoConfiguration {
             this.tarantoolProperties = tarantoolProperties;
         }
 
-        @Bean
+        @Bean(destroyMethod = "")
         @ConditionalOnMissingBean(name = "tarantoolSyncOps")
         public TarantoolClientOps<Integer, Object, Object, List> tarantoolSyncOps(
             TarantoolClient tarantoolClient
@@ -49,6 +49,7 @@ public class TarantoolAutoConfiguration {
             final TarantoolClientConfig config = new TarantoolClientConfig();
             config.username = tarantoolProperties.getUsername();
             config.password = tarantoolProperties.getPassword();
+            config.useNewCall = true;
             return config;
         }
 
