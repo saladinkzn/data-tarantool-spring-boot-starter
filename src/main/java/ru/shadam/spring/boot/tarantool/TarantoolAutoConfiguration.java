@@ -28,7 +28,7 @@ public class TarantoolAutoConfiguration {
 
         @Bean
         @ConditionalOnMissingBean(name = "tarantoolSyncOps")
-        public TarantoolClientOps<Integer, Object, Object, List> tarantoolSyncOps(
+        public TarantoolClientOps<Integer, List<?>, Object, List<?>> tarantoolSyncOps(
             TarantoolClient tarantoolClient
         ) {
             return tarantoolClient.syncOps();

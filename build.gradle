@@ -18,7 +18,7 @@ repositories {
 
 dependencies {
   compile 'org.springframework.boot:spring-boot-starter:1.4.3.RELEASE'
-  compile 'ru.shadam:spring-data-tarantool:0.1.0'
+  compile "ru.shadam:spring-data-tarantool:${version}"
   testCompile group: 'junit', name: 'junit', version: '4.11'
 }
 
@@ -59,6 +59,11 @@ artifactory {
       publications ('mavenJava')
       publishArtifacts = true
       publishPom = true
+    }
+  }
+  resolve {
+    repository {
+      repoKey = 'oss-snapshot-local'
     }
   }
 }
