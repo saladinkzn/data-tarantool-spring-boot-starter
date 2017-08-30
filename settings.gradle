@@ -1,8 +1,10 @@
-pluginRepositories {
-  maven {
-    url 'https://jcenter.bintray.com/'
+pluginManagement {
+  repositories {
+    maven {
+      url 'https://jcenter.bintray.com/'
+    }
+    gradlePluginPortal()
   }
-  gradlePluginPortal()
 }
 
 rootProject.name = 'data-tarantool-spring-boot-starter'
