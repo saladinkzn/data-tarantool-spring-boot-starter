@@ -1,0 +1,9 @@
+version: "3"
+services:
+  tarantool:
+    image: tarantool/tarantool:1.7
+    ports:
+      - 3301:3301
+    environment:
+      - TARANTOOL_USER_NAME=test
+      - TARANTOOL_USER_PASSWORD=test
